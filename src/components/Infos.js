@@ -6,9 +6,39 @@ export default function Infos() {
 
     return (
         <InfosTag>
-            <Info>
+            <Info className='left'>
                 <div className='info-content'>
-                <h2>Trade Your Pup</h2>
+                    <h2>Trade Your Pup</h2>
+                    <img className='image' src={imageInfo} alt="Info" />
+                    <div className='text'>
+                        <h2>Trade Your Pup</h2>
+                        <p>$WOOFIEPUPS can be bought, sold and/or traded through the OpenSea NFT Marketplace. This means you do not only have the ability to adopt one through the Woofie Dashboard, but also through OpenSea if that's more suitable for you</p>
+                    </div>
+                </div>
+            </Info>
+            <Info className='right'>
+                <div className='info-content'>
+                    <h2>Trade Your Pup</h2>
+                    <img className='image' src={imageInfo} alt="Info" />
+                    <div className='text'>
+                        <h2>Trade Your Pup</h2>
+                        <p>$WOOFIEPUPS can be bought, sold and/or traded through the OpenSea NFT Marketplace. This means you do not only have the ability to adopt one through the Woofie Dashboard, but also through OpenSea if that's more suitable for you</p>
+                    </div>
+                </div>
+            </Info>
+            <Info className='left'>
+                <div className='info-content'>
+                    <h2>Trade Your Pup</h2>
+                    <img className='image' src={imageInfo} alt="Info" />
+                    <div className='text'>
+                        <h2>Trade Your Pup</h2>
+                        <p>$WOOFIEPUPS can be bought, sold and/or traded through the OpenSea NFT Marketplace. This means you do not only have the ability to adopt one through the Woofie Dashboard, but also through OpenSea if that's more suitable for you</p>
+                    </div>
+                </div>
+            </Info>
+            <Info className='right'>
+                <div className='info-content'>
+                    <h2>Trade Your Pup</h2>
                     <img className='image' src={imageInfo} alt="Info" />
                     <div className='text'>
                         <h2>Trade Your Pup</h2>
@@ -21,7 +51,7 @@ export default function Infos() {
 }
 
 const InfosTag = styled.div`
-    
+    margin: 20px 0;
 `;
 
 const Info = styled.div`
@@ -63,8 +93,16 @@ const Info = styled.div`
 
         .info-content {
             flex-direction: column;
+        }
+
+        &.left > .info-content {
             padding-right: 20vw;
         }
+
+        &.right > .info-content {
+            padding-left: 20vw;
+        }
+
         --height-info: calc(var(--width-img-text)*.75*2);
 
         .text > h2 {
@@ -76,20 +114,34 @@ const Info = styled.div`
     margin: 25px 0;
     width: 100vw;
     height: calc(var(--height-info) + 10px);
-    clip-path: polygon(0vw 0px, 75vw 0px, 80vw calc(var(--height-info) + 10px), 0vw calc(var(--height-info) + 10px));
     background-color: #BFA84A;
+
+    &.left {
+        clip-path: polygon(0vw 0px, 75vw 0px, 80vw calc(var(--height-info) + 10px), 0vw calc(var(--height-info) + 10px));
+    }
+    &.right {
+        clip-path: polygon(100vw 0px, 25vw 0px, 20vw calc(var(--height-info) + 10px), 100vw calc(var(--height-info) + 10px));
+    }
     
     .info-content {
         width: 100vw;
         height: calc(var(--height-info) + 10px);
-        clip-path: polygon(0vw 0px, calc(75vw - 2px) 0px, calc(80vw - 2px) calc(var(--height-info) + 10px), 0vw calc(var(--height-info) + 10px));
         border-top: 1px solid #786B33;
         border-bottom: 1px solid #786B33;
         background-color: #2F240D;
 
         display: flex;
         align-items: center;
+    }
+
+    &.left > .info-content {
+        clip-path: polygon(0vw 0px, calc(75vw - 2px) 0px, calc(80vw - 2px) calc(var(--height-info) + 10px), 0vw calc(var(--height-info) + 10px));
         padding-left: var(--padding-info-content);
+    }
+    &.right > .info-content {
+        clip-path: polygon(100vw 0px, calc(25vw + 2px) 0px, calc(20vw + 2px) calc(var(--height-info) + 10px), 100vw calc(var(--height-info) + 10px));
+        padding-right: var(--padding-info-content);
+        justify-content: flex-end;
     }
 
     .image {
