@@ -41,6 +41,10 @@ const NftsTag = styled.div`
 
 const GetNfts = styled.div`
 
+    @media (max-width: 880px) {
+        display: none;
+    }
+
     margin-top: 30px;
 
     button {
