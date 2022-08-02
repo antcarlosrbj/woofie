@@ -19,14 +19,14 @@ export default function PresentationContent() {
 
 const PresentationContentTag = styled.div`
 
-    @media (min-width: 881px) {
-        --width-header: 80px;
+    @media (min-width: 1024px) {
+        --height-header: 6vw;
         .icon-mobile {
             display: none
         }
     }
-    @media (max-width: 880px) {
-        --width-header: 0px;
+    @media (max-width: 1023px) {
+        --height-header: 0px;
         flex-direction: column;
         .icon {
             display: none
@@ -38,7 +38,7 @@ const PresentationContentTag = styled.div`
     justify-content: space-evenly;
 
     width: 100vw;
-    height: calc(100vh - var(--width-header));
+    height: calc(100vh - var(--height-header));
 
     img.icon, img.icon-mobile {
         box-shadow: 0 4vw 6vw rgb(148 120 61 / 24%), 0 -4vw 6vw rgb(148 120 61 / 24%);
@@ -50,21 +50,37 @@ const PresentationContentTag = styled.div`
     }
 
     img.icon-mobile {
-        height: 20vh;
+        width: 42vw;
     }
 `;
 
 const WhatIs = styled.div`
 
-    @media (min-width: 881px) {
+    @media (min-width: 1024px) {
         --width-what-is: 36vw;
         --height-what-is: 70vh;
-        --font-h1: 80px;
+        --font-h1: 6.25vw;
+
+        & > botton {
+            width: 11vw;
+            height: 3.4vw;
+            font-size: .8vw;
+            border-radius: .22vw;
+            box-shadow: 0 0 .33vw #00000060;
+        }
     }
-    @media (max-width: 880px) {
+    @media (max-width: 1023px) {
         --width-what-is: 85vw;
         --height-what-is: 60vh;
-        --font-h1: 60px;
+        --font-h1: 11.5vw;
+
+        & > botton {
+            width: 49vw;
+            height: 15vw;
+            font-size: 4.3vw;
+            border-radius: 1vw;
+            box-shadow: 0 0 1.5vw #00000060;
+        }
     }
 
     display: flex;
@@ -78,11 +94,10 @@ const WhatIs = styled.div`
         font-family: var(--font-chakra);
         font-size: var(--font-h1);
         color: #AB8B47;
-        margin-bottom: 15px;
+        margin-bottom: 1.5vw;
     }
 
     & > p {
-        /* max-height: 30vh; */
         overflow: hidden;
         font-family: var(--font-ibm);
         font-size: 16px;
@@ -91,9 +106,8 @@ const WhatIs = styled.div`
     }
 
     & > botton {
-        width: 200px;
-        height: 60px;
-        padding: 5px;
+        /* width: 49vw;
+        height: 15vw; */
         background-color: #92763C;
 
         display: flex;
@@ -101,11 +115,11 @@ const WhatIs = styled.div`
         justify-content: center;
 
         font-family: var(--font-chakra);
-        font-size: 16px;
+        /* font-size: 4.3vw; */
         color: #FFFFFF;
         text-decoration: none;
 
-        border-radius: 4px;
-        box-shadow: 0 0 6px #00000060;
+        /* border-radius: 1vw;
+        box-shadow: 0 0 1.5vw #00000060; */
     }
 `;

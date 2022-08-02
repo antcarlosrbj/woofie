@@ -7,21 +7,21 @@ export default function Nfts() {
     return (
         <>
             <NftsTag>
-                <Nft widthNft={200} name={"Sea Green Citya"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green Cityb"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green Cityc"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green Cityd"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green Citye"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green Cityf"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green Cityg"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={200} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green Citya"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green Cityb"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green Cityc"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green Cityd"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green Citye"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green Cityf"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green Cityg"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                <Nft name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
             </NftsTag>
             <GetNfts>
                 <button>GET NTFS</button>
@@ -34,7 +34,11 @@ const NftsTag = styled.div`
     max-width: 100vw;
 
     display: flex;
-    padding: 190px 0 30px 0; 
+    padding: 190px 0 30px 0;
+
+    @media (max-width: 1023px) {
+        padding: 26vw 0 30px 0;
+    }
     
     overflow: auto;
 `;

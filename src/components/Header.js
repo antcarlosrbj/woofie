@@ -23,13 +23,7 @@ export default function Header() {
 
 const HeaderDiv = styled.div`
 
-    @media (min-width: 913px) {
-        --width-menu: 30vw;
-    }
-    @media (min-width: 881px) and (max-width: 912px) {
-        --width-menu: 275px;
-    }
-    @media (max-width: 880px) {
+    @media (max-width: 1023px) {
         display: none;
     }
     
@@ -38,10 +32,10 @@ const HeaderDiv = styled.div`
     justify-content: space-around;
 
     width: 100vw;
-    height: 80px;
+    height: 6vw;
 
     img {
-        width: 120px;
+        width: 9vw;
     }
 `;
 
@@ -51,12 +45,12 @@ const Menu = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    width: var(--width-menu);
-    height: 80px;
+    width: 30vw;
+    height: 6vw;
 
     a {
         font-family: var(--font-chakra);
-        font-size: 16px;
+        font-size: 1.3vw;
         text-decoration: none;
         color: white;
     }
@@ -68,15 +62,15 @@ const Discord = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 10px;
+    padding: 0.8vw;
 
-    border: 2px solid #B1904A;
-    border-radius: 29px;
+    border: .15vw solid #B1904A;
+    border-radius: 1.3vw;
 
     
     font-family: var(--font-chakra);
     text-decoration: none;
     color: white;
-    font-size: 14px;
+    font-size: 1vw;
     
 `;

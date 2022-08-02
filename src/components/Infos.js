@@ -56,54 +56,36 @@ const InfosTag = styled.div`
 
 const Info = styled.div`
 
-    @media (min-width: 1273px) {
+    @media (min-width: 1024px) {
         --width-img-text: 27.5vw;
-        --padding-info-content: 20vw;
+        --padding-info-content: 20vw;   
 
         .info-content > h2 {
             display: none;
         }
     }
-
-    @media (min-width: 994px) and (max-width: 1272px) {
-        --width-img-text: 350px;
-        --padding-info-content: calc(75vw - 700px);
-
-        .info-content > h2 {
-            display: none;
-        }
-    }
-
-    @media (min-width: 881px) and (max-width: 993px) {
-        --width-img-text: calc((75vw - 45px)/2);
-        --padding-info-content: 45px;
-
-        .info-content > h2 {
-            display: none;
-        }
-    }
-
     --height-info: calc(var(--width-img-text)*.75);
 
     padding-right: 20vw;
 
-    @media (max-width: 880px) {
+    &.left > .info-content {
+        padding-right: 20vw;
+    }
+
+    &.right > .info-content {
+        padding-left: 25vw;
+    }
+
+    @media (max-width: 1023px) {
         --width-img-text: 65vw;
         --padding-info-content: 0px;
 
         .info-content {
             flex-direction: column;
+            align-items: center;
         }
 
-        &.left > .info-content {
-            padding-right: 20vw;
-        }
-
-        &.right > .info-content {
-            padding-left: 20vw;
-        }
-
-        --height-info: calc(var(--width-img-text)*.75*2);
+        --height-info: calc(var(--width-img-text)*.75*1.7);
 
         .text > h2 {
             display: none;
@@ -131,7 +113,7 @@ const Info = styled.div`
         background-color: #2F240D;
 
         display: flex;
-        align-items: center;
+        /* align-items: center; */
     }
 
     &.left > .info-content {
@@ -141,7 +123,7 @@ const Info = styled.div`
     &.right > .info-content {
         clip-path: polygon(100vw 0px, calc(25vw + 2px) 0px, calc(20vw + 2px) calc(var(--height-info) + 10px), 100vw calc(var(--height-info) + 10px));
         padding-right: var(--padding-info-content);
-        justify-content: flex-end;
+        /* justify-content: flex-end; */
     }
 
     .image {
@@ -153,7 +135,18 @@ const Info = styled.div`
     .text {
         width: calc(var(--width-img-text) * 1.1);
         height: var(--height-info);
+        
         padding: 15px;
+    }
+
+    @media (max-width: 880px) {
+        .image {
+            height: calc(var(--height-info)/2);
+        }
+
+        .text {
+            height: calc(var(--height-info)/3);
+        }
     }
     
     h2 {
