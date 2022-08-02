@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Header from '../components/Header.js';
 import PresentationContent from '../components/PresentationContent.js';
+import NftsHome from '../components/Nfts.js';
 import background from './../img/fundo-home.jpg';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
                 <Header/>
                 <PresentationContent/>
             </Presentation>
+            <NftsHome/>
         </Main>
     );
 }

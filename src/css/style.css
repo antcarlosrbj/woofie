@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=IBM+Plex+Mono&family=Inter:wght@400;600&family=Montserrat:wght@500&display=swap');
 
 * {
     box-sizing: border-box;
     --font-chakra: 'Chakra Petch', sans-serif;
     --font-ibm: 'IBM Plex Mono', monospace;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-inter: 'Inter', sans-serif;
 }
 
 body{
