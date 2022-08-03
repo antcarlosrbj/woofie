@@ -5,6 +5,7 @@ import PresentationContent from '../components/PresentationContent.js';
 import NftsHome from '../components/Nfts.js';
 import Infos from '../components/Infos.js';
 import MeetOurTeam from '../components/MeetOurTeam.js';
+import Partners from '../components/Partners.js';
 
 import background from './../img/fundo-home.jpg';
 
@@ -20,6 +21,7 @@ export default function Home() {
             <NftsHome/>
             <Infos/>
             <MeetOurTeam />
+            <Partners />
         </Main>
     );
 }
