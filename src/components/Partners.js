@@ -94,12 +94,14 @@ const PartnersTag = styled.div`
         font-family: var(--font-ibm);
         font-weight: 700;
         color: #AB8B4E;
+        text-shadow: .05vw .05vw .2vw #AB8B4E50;
     }
 
     .subhead {
         font-family: var(--font-chakra);
         font-weight: 700;
         color: #FFFFFF;
+        text-shadow: .05vw .05vw .2vw #FFFFFF50;
     }
 
     .links {
