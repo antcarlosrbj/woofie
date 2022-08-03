@@ -106,8 +106,6 @@ const WhatIs = styled.div`
     }
 
     & > botton {
-        /* width: 49vw;
-        height: 15vw; */
         background-color: #92763C;
 
         display: flex;
@@ -115,11 +113,7 @@ const WhatIs = styled.div`
         justify-content: center;
 
         font-family: var(--font-chakra);
-        /* font-size: 4.3vw; */
         color: #FFFFFF;
         text-decoration: none;
-
-        /* border-radius: 1vw;
-        box-shadow: 0 0 1.5vw #00000060; */
     }
 `;

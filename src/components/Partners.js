@@ -86,6 +86,7 @@ const PartnersTag = styled.div`
         }
     }
 
+    background-color: #0F0F0F;
     display: flex;
     flex-direction: column;
     align-items: center;

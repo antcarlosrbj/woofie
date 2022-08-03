@@ -7,6 +7,7 @@ import Infos from '../components/Infos.js';
 import MeetOurTeam from '../components/MeetOurTeam.js';
 import Partners from '../components/Partners.js';
 import Faqs from '../components/Faqs.js';
+import Subscribe from '../components/Subscribe.js';
 
 import background from './../img/fundo-home.jpg';
 
@@ -24,6 +25,7 @@ export default function Home() {
             <MeetOurTeam />
             <Partners />
             <Faqs />
+            <Subscribe />
         </Main>
     );
 }
