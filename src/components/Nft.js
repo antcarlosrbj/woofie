@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 import nftImg from './../img/BullterrierInu-watermark.gif';
 
-export default function Nft({widthNft, name, highestBid, minimumBid}) {
+export default function Nft({name, highestBid, minimumBid}) {
 
     return (
-        <NftTag theme={{widthNft: widthNft+"vw"}}>
+        <NftTag>
             <img src={nftImg} alt="NFT Image" />
             <div className='description'>
                 <p className='name'>{name}</p>
@@ -27,11 +27,11 @@ export default function Nft({widthNft, name, highestBid, minimumBid}) {
 
 const NftTag = styled.div`
 
-    --width-nft: ${props => props.theme.widthNft};
+    --width-nft: 15vw;
 
-    /* @media (max-width: 1023px) {
+    @media (max-width: 1023px) {
         --width-nft: 42.5vw;
-    } */
+    }
 
     min-width: var(--width-nft);
     height: calc(1.55 * var(--width-nft));

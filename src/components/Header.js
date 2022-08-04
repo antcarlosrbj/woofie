@@ -11,8 +11,8 @@ export default function Header() {
             <Menu>
                 <Link to="/">HOME</Link>
                 <Link to="/">MINT NODE</Link>
-                <Link to="/">NFTS</Link>
-                <Link to="/">TRADE</Link>
+                <Link to="/nfts">NFTS</Link>
+                <Link to="/trade">TRADE</Link>
             </Menu>
             <Discord>
                 JOIN DISCORD

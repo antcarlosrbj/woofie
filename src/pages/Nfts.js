@@ -15,13 +15,23 @@ export default function Nfts() {
 
     const [search, setSearch] = useState("");
 
-    const widthNft = window.screen.width > 1024 ? 15 : 70;
+    const nfts = [
+        {name:"Sea Green Citya", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityb", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityc", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityd", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Citye", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityf", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityg", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityh", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityi", highestBid:2.5, minimumBid:0.499}
+    ];
 
     return (
         <Main>
             <Header/>
             <NftsTag>
-                <img className='icon' src={icon} alt="icon" onClick={() => console.log(widthNft)} />
+                <img className='icon' src={icon} alt="icon" />
                 <div className='filters'>
                     <input type="text" value={search} placeholder="Search" onChange={e => setSearch(e.target.value)} />
                     <div className='categories'>
@@ -34,21 +44,9 @@ export default function Nfts() {
                     </div>
                 </div>
                 <NftsList>
-                    <Nft widthNft={widthNft} name={"Sea Green Citya"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green Cityb"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green Cityc"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green Cityd"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green Citye"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green Cityf"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green Cityg"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                    <Nft widthNft={widthNft} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                    {nfts.map(nft => {return (
+                        <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
+                    )})}
                 </NftsList>
             </NftsTag>
             <Subscribe />
@@ -192,6 +190,7 @@ const NftsList = styled.div`
     @media (max-width: 1023px) {
         & > div {
             margin-top: 6vw;
+            --width-nft: 65vw;
         }
     }
 

@@ -113,7 +113,6 @@ const Info = styled.div`
         background-color: #2F240D;
 
         display: flex;
-        /* align-items: center; */
     }
 
     &.left > .info-content {
@@ -123,7 +122,6 @@ const Info = styled.div`
     &.right > .info-content {
         clip-path: polygon(100vw 0px, calc(25vw + 2px) 0px, calc(20vw + 2px) calc(var(--height-info) + 10px), 100vw calc(var(--height-info) + 10px));
         padding-right: var(--padding-info-content);
-        /* justify-content: flex-end; */
     }
 
     .image {

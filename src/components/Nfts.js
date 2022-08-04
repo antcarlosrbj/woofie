@@ -2,26 +2,26 @@ import styled from 'styled-components';
 
 import Nft from '../components/Nft.js';
 
-export default function Nfts() {
+export default function NftsHome() {
+
+    const nfts = [
+        {name:"Sea Green Citya", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityb", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityc", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityd", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Citye", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityf", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityg", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityh", highestBid:2.5, minimumBid:0.499},
+        {name:"Sea Green Cityi", highestBid:2.5, minimumBid:0.499}
+    ];
 
     return (
         <>
             <NftsTag>
-                <Nft widthNft={15} name={"Sea Green Citya"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green Cityb"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green Cityc"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green Cityd"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green Citye"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green Cityf"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green Cityg"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
-                <Nft widthNft={15} name={"Sea Green City"} highestBid={2.5} minimumBid={0.499} />
+                {nfts.map(nft => {return (
+                    <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
+                )})}
             </NftsTag>
             <GetNfts>
                 <button>GET NTFS</button>
