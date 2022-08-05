@@ -88,13 +88,8 @@ const NftsList = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* gap: 2vw 0; */
 
     width: 100vw;
-
-    /* & > div {
-        --width-nft: 23.8vw;
-    } */
 
     & > div .description {
         justify-content: start;
@@ -103,7 +98,6 @@ const NftsList = styled.div`
 
     & > div .bids {
         flex-direction: column;
-        /* margin-top: 2vw; */
     }
 
     & > div .bid {
