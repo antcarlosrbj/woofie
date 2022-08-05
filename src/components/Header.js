@@ -10,7 +10,7 @@ export default function Header() {
             <img src={logo} alt="Logo" />
             <Menu>
                 <Link to="/">HOME</Link>
-                <Link to="/">MINT NODE</Link>
+                <Link to="/mind-node">MIND NODE</Link>
                 <Link to="/nfts">NFTS</Link>
                 <Link to="/trade">TRADE</Link>
             </Menu>
