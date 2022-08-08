@@ -115,5 +115,12 @@ const WhatIs = styled.div`
         font-family: var(--font-chakra);
         color: #FFFFFF;
         text-decoration: none;
+
+        transition: .3s;
+    }
+
+    & > botton:hover {
+        box-shadow: 0 0 2vw rgb(148 120 61 / 80%);
+        background-color: #b38d3e;
     }
 `;

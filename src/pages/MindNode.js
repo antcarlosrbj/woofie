@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { TailSpin } from "react-loader-spinner";
 
 import Header from '../components/Header.js';
 import Subscribe from '../components/Subscribe.js';
@@ -24,9 +25,13 @@ export default function MindNode() {
             <Header/>
             <img className='icon' src={icon} alt="icon" />
             <NftsList>
-                {nfts.map(nft => {return (
-                    <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
-                )})}
+                {nfts.length !== 0 ? 
+                    nfts.map(nft => {return (
+                        <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
+                    )})
+                :
+                    <TailSpin {...{ color: "#9f844b" }} />
+                }
             </NftsList>
             <Subscribe />
             <Footer />

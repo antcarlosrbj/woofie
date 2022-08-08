@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { TailSpin } from "react-loader-spinner";
 
 import Nft from '../components/Nft.js';
 
@@ -19,12 +21,16 @@ export default function NftsHome() {
     return (
         <>
             <NftsTag>
-                {nfts.map(nft => {return (
-                    <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
-                )})}
+                {nfts.length !== 0 ? 
+                    nfts.map(nft => {return (
+                        <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
+                    )})
+                :
+                    <TailSpin {...{ color: "#9f844b" }} />
+                }
             </NftsTag>
             <GetNfts>
-                <button>GET NTFS</button>
+                <Link to="/nfts">GET NTFS</Link>
             </GetNfts>
         </>
     );
@@ -51,15 +57,25 @@ const GetNfts = styled.div`
 
     margin-top: 30px;
 
-    button {
-        width: 160px;
-        height: 60px;
-        border-radius: 30px;
+    a {
+        display: block;
+        width: 12.5vw;
+        border-radius: 3.34vw;
         border: 2px solid #AB8B4B6C;
         background: none;
 
+        text-decoration: none;
         font-family: var(--font-chakra);
-        font-size: 16px;
+        font-size: 1.25vw;
+        line-height: 3.75;
+        text-align: center;
         color: #AB8E51;
+        transition: .3s;
+    }
+
+    a:hover {
+        box-shadow: 0 0 2vw rgb(148 120 61 / 80%);
+        background-color: #b38d3e;
+        color: #FFFFFF;
     }
 `;

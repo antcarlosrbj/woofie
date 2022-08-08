@@ -181,6 +181,7 @@ const MeetOurTeamTag = styled.div`
         border-radius: .1vw;
         justify-content: center;
         margin-right: .2vw;
+        transition: .3s;
     }
 
     .arrows > div:hover {
@@ -277,6 +278,7 @@ const Card = styled.div`
             height: 6.7vw;
             border-radius: 2.24vw;
             margin-right: 2.24vw;
+
         }
 
         .links > div:hover {
@@ -323,6 +325,7 @@ const Card = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .3s;
     }
 
     .links > div:hover {

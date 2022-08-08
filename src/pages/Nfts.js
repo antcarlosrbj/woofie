@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { TailSpin } from "react-loader-spinner";
 
 import Header from '../components/Header.js';
 import Subscribe from '../components/Subscribe.js';
@@ -75,10 +76,14 @@ export default function Nfts() {
                         </div>
                     </div>
                 </div>
-                <NftsList>
-                    {nfts.map(nft => {return (
-                        <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
-                    )})}
+                <NftsList nfts={nfts.length}>
+                    {nfts.length !== 0 ? 
+                        nfts.map(nft => {return (
+                            <Nft name={nft.name} highestBid={nft.highestBid} minimumBid={nft.minimumBid} />
+                        )})
+                    :
+                        <TailSpin {...{ color: "#9f844b" }}/>
+                    }
                 </NftsList>
             </NftsTag>
             <Subscribe />
@@ -307,6 +312,7 @@ const NftsList = styled.div`
     padding: 5vw 12vw;
     
     display: flex;
+    justify-content: ${(props) => props.nfts === 0 ? 'center' : 'normal'};
     flex-wrap: wrap;
     gap: 2vw 0;
     

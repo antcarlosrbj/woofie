@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import nftImg from './../img/BullterrierInu-watermark.gif';
 
@@ -19,7 +20,7 @@ export default function Nft({name, highestBid, minimumBid}) {
                         <p className='value'>{minimumBid.toFixed(3) + " ETH"}</p>
                     </div>
                 </div>
-                <button>Place A Bid</button>
+                <Link to="/?place-a-bid">Place A Bid</Link>
             </div>
         </NftTag>
     );
@@ -100,15 +101,25 @@ const NftTag = styled.div`
         }
     }
 
-    button {
+    a {
+        display: block;
         width: calc(0.86 * var(--width-nft));
         height: calc(0.18 * var(--width-nft));
         border-radius: calc(0.09 * var(--width-nft));
         border: calc(var(--width-nft)/105) solid #AB8B4B6C;
         background: none;
 
+        text-decoration: none;
+        text-align: center;
         font-family: var(--font-montserrat);
         font-size: calc(var(--width-nft)/17.5);
+        line-height: 2.57;
         color: #AB8E51;
+    }
+
+    a:hover {
+        box-shadow: 0 0 2vw rgb(148 120 61 / 80%);
+        background-color: #b38d3e;
+        color: #FFFFFF;
     }
 `;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { ThreeDots } from "react-loader-spinner";
 
 import Header from '../components/Header.js';
 import Subscribe from '../components/Subscribe.js';
@@ -9,8 +10,12 @@ import icon from './../img/presalewoofie.png';
 
 export default function Trade() {
 
-    const [usd, setUsd] = useState("");
-    const [woofie, setWoofie] = useState("");
+    const [usdBuy, setUsdBuy] = useState("");
+    const [woofieBuy, setWoofieBuy] = useState("");
+    const [usdSell, setUsdSell] = useState("");
+    const [woofieSell, setWoofieSell] = useState("");
+    const [loadingBuy, setLoadingBuy] = useState(false);
+    const [loadingSell, setLoadingSell] = useState(false);
 
     return (
         <Main>
@@ -23,14 +28,14 @@ export default function Trade() {
                         <p>USDC.e</p>
                         <p>Balance: 0.0000</p>
                     </div>
-                    <input type="text" value={usd} onChange={e => setUsd(e.target.value)} />
+                    <input type="text" value={usdBuy} onChange={e => setUsdBuy(e.target.value)} disabled={loadingBuy || loadingSell} />
                     <div className='label woofie'>
                         <p>WOOFIE</p>
                         <p>Balance: 0.0000</p>
                     </div>
-                    <input type="text" value={woofie} onChange={e => setWoofie(e.target.value)} />
+                    <input type="text" value={woofieBuy} onChange={e => setWoofieBuy(e.target.value)} disabled={loadingBuy || loadingSell} />
                     <p className='message'>Share your referral link for buys and earn 10% pLava on all buys:</p>
-                    <button>Loading</button>
+                    <button className={(loadingBuy || loadingSell) ? "disabled" : ""}>{loadingBuy ? <ThreeDots {...{ color: "#9f844b" }}/> : "Buy"}</button>
                 </div>
                 <div className='sell'>
                 <p className='title'>Sell WOOFIE</p>
@@ -38,14 +43,14 @@ export default function Trade() {
                         <p>WOOFIE</p>
                         <p>Balance: 0.0000</p>
                     </div>
-                    <input type="text" value={usd} onChange={e => setUsd(e.target.value)} />
+                    <input type="text" value={usdSell} onChange={e => setUsdSell(e.target.value)} disabled={loadingBuy || loadingSell} />
                     <div className='label woofie'>
                         <p>USDC.e</p>
                         <p>Balance: 0.0000</p>
                     </div>
-                    <input type="text" value={woofie} onChange={e => setWoofie(e.target.value)} />
+                    <input type="text" value={woofieSell} onChange={e => setWoofieSell(e.target.value)} disabled={loadingBuy || loadingSell} />
                     <p className='message'>The above USDC.e includes 15% sales tax. This is the approx. amount of tokens you would receive on sell.</p>
-                    <button>Loading</button>
+                    <button className={(loadingBuy || loadingSell) ? "disabled" : ""}>{loadingSell ? <ThreeDots {...{ color: "#9f844b" }}/> : "Sell"}</button>
                 </div>
             </TradeTag>
             <Subscribe />
@@ -117,7 +122,11 @@ const TradeTag = styled.div`
             width: 39.74vw;
             height: 2.5vw;
             border-radius: .5vw;
-            font-size: .73vw;
+            font-size: 1vw;
+        }
+
+        button svg {
+            width: 4vw;
         }
     }
 
@@ -162,6 +171,10 @@ const TradeTag = styled.div`
             border-radius: 2.3vw;
             font-size: 3.27vw;
         }
+
+        button svg {
+            width: 18vw;
+        }
     }
     
     display: flex;
@@ -200,11 +213,22 @@ const TradeTag = styled.div`
         background-color: #FFFFFF;
     }
 
+    input:disabled {
+        background-color: #a5a5a5;
+    }
+
     button {
         border: 0;
         background-color: #000000;
         color: #FFFFFF;
         font-family: var(--font-chakra);
         font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button.disabled {
+        background-color: #161616;
     }
 `;

@@ -13,7 +13,7 @@ export default function Faq({question, answer}) {
             <div className={hidden ? 'faq' : 'faq shadow'} onClick={() => setHidden(s => !s)}>
                 <div className='question'>
                     <p>{question}</p>
-                    {hidden ? <img src={downArrow} alt="downArrow" /> : <img src={upArrow} alt="upArrow" />}
+                    <img src={downArrow} alt="downArrow" />
                 </div>
                 <p className={hidden ? 'answer hidden' : 'answer'}>
                     {answer}
@@ -99,6 +99,14 @@ const FaqTag = styled.div`
         align-items: center;
     }
 
+    /* .faq:not(.shadow) {
+        height: 6.9vw;
+        transition: height .5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0;
+    }
+    .shadow {
+        height: 13.8vw;
+    } */
+
     .question {
         display: flex;
         align-items: center;
@@ -111,6 +119,14 @@ const FaqTag = styled.div`
         color: #FFFFFF;
     }
 
+    .faq:not(.shadow) > .question > img {
+        animation: reverse-spin-180 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+
+    .shadow > .question > img {
+        animation: spin-180 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+
     .answer {
         font-family: var(--font-ibm);
         font-weight: 700;
@@ -119,6 +135,14 @@ const FaqTag = styled.div`
     }
 
     .hidden {
-        display: none;
+        height: 0;
+        margin-bottom: 0;
+        transform: scaleY(0);
+        transform-origin: 100% 0%;
+    }
+
+    .answer:not(.hidden) {
+        -webkit-animation: open-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	    animation: open-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
 `;

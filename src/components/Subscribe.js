@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import logo from './../img/presalewoofie.png';
 
@@ -13,15 +14,15 @@ export default function Subscribe() {
         <SubscribeTag>
             <img className='logo' src={logo} alt="logo" />
             <div className='links'>
-                <img src={twitter} alt="twitter" />
-                <img src={facebook} alt="facebook" />
-                <img src={telegram} alt="telegram" />
-                <img src={discord} alt="discord" />
-                <img src={discord} alt="discord" />
-                <img src={discord} alt="discord" />
+                <Link to="/?twitter"><img src={twitter} alt="twitter" /></Link>
+                <Link to="/?facebook"><img src={facebook} alt="facebook" /></Link>
+                <Link to="/?telegram"><img src={telegram} alt="telegram" /></Link>
+                <Link to="/?discord"><img src={discord} alt="discord" /></Link>
+                <Link to="/?discord"><img src={discord} alt="discord" /></Link>
+                <Link to="/?discord"><img src={discord} alt="discord" /></Link>
             </div>
             <ContactUs>
-                CONTACT US
+                <Link to="/?contact-us">CONTACT US</Link>
             </ContactUs>
         </SubscribeTag>
     );
@@ -40,7 +41,7 @@ const SubscribeTag = styled.div`
             gap: 1.4vw;
         }
 
-        .links > img {
+        .links img {
             height: 1.25vw;
         }
     }
@@ -56,7 +57,7 @@ const SubscribeTag = styled.div`
             gap: 6.3vw;
         }
 
-        .links > img {
+        .links img {
             height: 5.6vw;
         }
     }
@@ -72,6 +73,14 @@ const SubscribeTag = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    a > img{
+        transition: .3s;
+    }
+
+    a > img:hover {
+        filter: invert(74%) sepia(64%) saturate(478%) hue-rotate(341deg) brightness(104%) contrast(82%);
     }
 `;
 
@@ -102,8 +111,15 @@ const ContactUs = styled.div`
     align-items: center;
     justify-content: center;
     
-    font-family: var(--font-chakra);
-    font-weight: 700;
-    text-decoration: none;
-    color: white;    
+    a {
+        font-family: var(--font-chakra);
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        background-color: #9f844b;
+        box-shadow: 0 0 3vw rgb(148 120 61 / 80%);
+    }
 `;
