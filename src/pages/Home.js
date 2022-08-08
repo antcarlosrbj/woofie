@@ -4,6 +4,7 @@ import Header from '../components/Header.js';
 import PresentationContent from '../components/PresentationContent.js';
 import NftsHome from '../components/Nfts.js';
 import Infos from '../components/Infos.js';
+import Roadmap from '../components/Roadmap.js';
 import MeetOurTeam from '../components/MeetOurTeam.js';
 import Partners from '../components/Partners.js';
 import Faqs from '../components/Faqs.js';
@@ -23,6 +24,7 @@ export default function Home() {
             </Presentation>
             <NftsHome/>
             <Infos/>
+            <Roadmap/>
             <MeetOurTeam />
             <Partners />
             <Faqs />
