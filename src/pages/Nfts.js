@@ -27,6 +27,26 @@ export default function Nfts() {
         {name:"Sea Green Cityi", highestBid:2.5, minimumBid:0.499}
     ];
 
+    const [buttons, setButtons] = useState({categories: false, sorting: false});
+
+    function click(button) {
+        if (buttons[button]) {
+            document.querySelector('.categories').classList.remove("clicked");
+            document.querySelector('.sorting').classList.remove("clicked");
+            setButtons({categories: false, sorting: false})
+        } else {
+            const aux = {categories: false, sorting: false};
+            aux[button] = true;
+            document.querySelector('.categories').classList.remove("clicked");
+            document.querySelector('.sorting').classList.remove("clicked");
+            document.querySelector('.'+button).classList.add("clicked");
+            setButtons(aux)
+        }
+    }
+
+    const [categories, setCategories] = useState("All categories");
+    const [sorting, setSorting] = useState("Default sorting");
+
     return (
         <Main>
             <Header/>
@@ -34,13 +54,25 @@ export default function Nfts() {
                 <img className='icon' src={icon} alt="icon" />
                 <div className='filters'>
                     <input type="text" value={search} placeholder="Search" onChange={e => setSearch(e.target.value)} />
-                    <div className='categories'>
-                        <p>All Categories</p>
-                        <img src={downArrow} alt="downArrow" />
+                    <div className='categories' onClick={() => click("categories")}>
+                        <p>{categories}</p>
+                        <img className='down-arrow' src={downArrow} alt="downArrow" />
+                        <img className='up-arrow' src={upArrow} alt="upArrow" />
+                        <div className="categories-content">
+                            <p onClick={() => setCategories("Categorie #01")}>Categorie #01</p>
+                            <p onClick={() => setCategories("Categorie #02")}>Categorie #02</p>
+                            <p onClick={() => setCategories("Categorie #03")}>Categorie #03</p>
+                        </div>
                     </div>
-                    <div className='sorting'>
-                        <p>Default sorting</p>
-                        <img src={downArrow} alt="downArrow" />
+                    <div className='sorting' onClick={() => click("sorting")}>
+                        <p>{sorting}</p>
+                        <img className='down-arrow' src={downArrow} alt="downArrow" />
+                        <img className='up-arrow' src={upArrow} alt="upArrow" />
+                        <div className="sorting-content">
+                            <p onClick={() => setSorting("Sorting #01")}>Sorting #01</p>
+                            <p onClick={() => setSorting("Sorting #02")}>Sorting #02</p>
+                            <p onClick={() => setSorting("Sorting #03")}>Sorting #03</p>
+                        </div>
                     </div>
                 </div>
                 <NftsList>
@@ -95,6 +127,7 @@ const NftsTag = styled.div`
         .categories, .sorting {
             width: 12.5vw;
             padding: 0 1.04vw;
+            height: 100%;
         }
 
         .categories > p, .sorting > p {
@@ -103,6 +136,14 @@ const NftsTag = styled.div`
 
         .categories > img, .sorting > img {
             width: .8vw;
+            right: 1.04vw;
+        }
+
+        .categories-content > p, .sorting-content > p {
+            height: 2.7vw;
+            line-height: 2.7vw;
+            padding: 0 1.04vw;
+            font-size: 1vw;
         }
     }
 
@@ -145,6 +186,14 @@ const NftsTag = styled.div`
 
         .categories > img, .sorting > img {
             width: 3.6vw;
+            right: 4vw;
+        }
+
+        .categories-content > p, .sorting-content > p {
+            height: 12vw;
+            line-height: 12vw;
+            padding: 0 4vw;
+            font-size: 4vw;
         }
     }
     
@@ -176,12 +225,73 @@ const NftsTag = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transition: .3s;
+        position: relative;
+    }
+
+    .categories > img, .sorting > img {
+        position: absolute;
+    }
+
+    .categories:hover, .sorting:hover {
+        background-color: #FFFFFF20;
+    }
+
+    .filters > div:not(.clicked) > .up-arrow {
+        -webkit-animation: enter-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        animation: exit-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        transform: rotateX(-90deg);
+    }
+
+    .clicked > .up-arrow {
+        transform: rotateX(-90deg);
+        -webkit-animation: enter-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        animation: enter-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+
+    .filters > div:not(.clicked) > .down-arrow {
+        transform: rotateX(-90deg);
+        -webkit-animation: enter-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        animation: enter-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+
+    .clicked > .down-arrow {
+        -webkit-animation: exit-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        animation: exit-arrow 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        transform: rotateX(-90deg);
     }
 
     .categories > p, .sorting > p {
         font-family: var(--font-ibm);
         font-weight: 700;
         color: #B9B9BF;
+    }
+
+    .categories-content, .sorting-content {
+        position: absolute;
+        background-color: #000000E6;
+        top: 100%;
+        left: 0;
+        right: 0%;
+        z-index: 1;
+        transition: 0.5s;
+        transform: scaleY(0);
+        transform-origin: 100% 0%;
+    }
+    
+    .categories-content > p, .sorting-content > p {
+        font-family: var(--font-ibm);
+        font-weight: 700;
+        color: #B9B9BF;
+    }
+
+    .categories-content > p:hover, .sorting-content > p:hover {
+        background-color: #FFFFFF20;
+    }
+
+    .clicked > .categories-content, .clicked > .sorting-content {
+        -webkit-animation: open-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	    animation: open-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
 `;
 
