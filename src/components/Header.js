@@ -15,7 +15,7 @@ export default function Header() {
                 <Link to="/trade">TRADE</Link>
             </Menu>
             <Discord>
-                JOIN DISCORD
+                <Link to="/?discord">JOIN DISCORD</Link>
             </Discord>
         </HeaderDiv>
     );
@@ -62,15 +62,25 @@ const Discord = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 0.8vw;
+    padding: 0 0.8vw;
 
     border: .15vw solid #B1904A;
     border-radius: 1.3vw;
 
-    
-    font-family: var(--font-chakra);
-    text-decoration: none;
-    color: white;
-    font-size: 1vw;
+    transition: .3s;
+
+    a {
+        text-decoration: none;
+        font-family: var(--font-chakra);
+        color: white;
+        font-size: 1vw;
+        line-height: 2.6;
+        height: 100%;
+    }
+
+    &:hover {
+        background-color: #9f844b;
+        box-shadow: 0 0 3vw rgb(148 120 61 / 80%);
+    }
     
 `;
